@@ -63,17 +63,15 @@ a:active {
     </ul>
 
 </div>
-
-
 <div id="content">
     <div id="content-header">
         <h1>学员信息管理</h1>
-    </div>
+  </div>
     <div id="breadcrumb">
         <a href="#" title="Go to Home" class="tip-bottom"><i class="icon-home"></i>合众艾特</a>
         <a href="#" class="current">学员信息</a>
     </div>
-    <div class="container-fluid">
+    <div class="container-fluid" id="zhongjian">
         <div class="row-fluid">
             <div class="span12">
                 <div class="widget-box">
@@ -81,8 +79,8 @@ a:active {
                         <h5>学员信息列表</h5>
                     </div>
                     <div class="widget-content nopadding">
-                        <table class="table table-bordered data-table">
-                            <thead>
+                      <table class="table table-bordered data-table">
+                          <thead>
                             <tr>
                                 <th width="15%">编号</th>
                                 <th width="15%">微信号</th>
@@ -92,7 +90,7 @@ a:active {
                                 <th width="22%">详细</th>
 
                             </tr>
-                            </thead>
+                        </thead>
                             <tbody>
 <!--table开始-->
 <% ImplementationStudent student=new ImplementationStudent();
@@ -105,13 +103,13 @@ a:active {
                                 <td><%=l.getStudentName()%></td>
                                 <td><%=(l.getSex()==0)?'男':'女'%></td>
                                 <td><%=l.getPhone()%></td>
-                                <td><a href="#">详细</a></td>
+                                <td><a href="www.baidu.com" target="content">详细</a></td>
                             </tr>
  <%}%>
   <!--table结束 -->                       
     </tbody>
-                        </table>
-                    </div>
+                      </table>
+                  </div>
                 </div>
             </div>
         </div>
