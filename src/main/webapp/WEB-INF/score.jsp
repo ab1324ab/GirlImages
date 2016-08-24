@@ -11,7 +11,7 @@ To change this template use File | Settings | File Templates.
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>学员信息管理</title>
+    <title>教师信息管理</title>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" href="css/bootstrap.min.css"/>
@@ -65,29 +65,29 @@ a:active {
 </div>
 <div id="content">
     <div id="content-header">
-        <h1>学员信息管理</h1>
+        <h1>教师信息管理</h1>
   </div>
     <div id="breadcrumb">
         <a href="#" title="Go to Home" class="tip-bottom"><i class="icon-home"></i>合众艾特</a>
-        <a href="#" class="current">学员信息</a>
+        <a href="#" class="current">教师信息</a>
     </div>
     <div class="container-fluid" id="zhongjian">
         <div class="row-fluid">
             <div class="span12">
                 <div class="widget-box">
                     <div class="widget-title">
-                        <h5>学员信息列表</h5>
+                        <h5>教师信息列表</h5>
                     </div>
                     <div class="widget-content nopadding">
                       <table class="table table-bordered data-table">
                           <thead>
                             <tr>
-                                <th width="15%">编号</th>
-                                <th width="15%">微信号</th>
-                                <th width="19%">姓名</th>
-                                <th width="24%">性别</th>
-                                <th width="20%">手机号</th>
-                                <th width="22%">详细</th>
+                                <th width="13%">教师编号</th>
+                                <th width="13%">教师微信号</th>
+                                <th width="16%">姓名</th>
+                                <th width="19%">性别</th>
+                                <th width="29%">手机号</th>
+                                <th width="10%">详细</th>
 
                             </tr>
                         </thead>
