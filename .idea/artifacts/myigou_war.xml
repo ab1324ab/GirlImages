@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="myigou:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="myigou-1.1-SNAPSHOT.war">
+      <element id="artifact" artifact-name="myigou:war exploded" />
+    </root>
+  </artifact>
+</component>
