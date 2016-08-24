@@ -58,8 +58,8 @@ a:active {
     <ul>
         <li class="active"><a href="tables.jsp"><i class="icon icon-th"></i> <span>学员信息管理</span></a></li>
         <li><a href="Teachers.jsp"><i class="icon icon-th"></i> <span>教员信息管理</span></a></li>
-        <li><a href="#"><i class="icon icon-th-list"></i> <span>课程管理</span></a></li>
-        <li><a href="#"><i class="icon icon-th-list"></i> <span>分数管理</span></a></li>
+        <li><a href="course.jsp"><i class="icon icon-th-list"></i> <span>课程管理</span></a></li>
+        <li><a href="score.jsp"><i class="icon icon-th-list"></i> <span>分数管理</span></a></li>
     </ul>
 
 </div>

@@ -58,8 +58,8 @@ a:active {
     <ul>
         <li class="active"><a href="tables.jsp"><i class="icon icon-th"></i> <span>学员信息管理</span></a></li>
         <li><a href="Teachers.jsp"><i class="icon icon-th"></i> <span>教员信息管理</span></a></li>
-        <li><a href="#"><i class="icon icon-th-list"></i> <span>课程管理</span></a></li>
-        <li><a href="#"><i class="icon icon-th-list"></i> <span>分数管理</span></a></li>
+        <li><a href="course.jsp"><i class="icon icon-th-list"></i> <span>课程管理</span></a></li>
+        <li><a href="score.jsp"><i class="icon icon-th-list"></i> <span>分数管理</span></a></li>
     </ul>
 
 </div>
@@ -83,10 +83,11 @@ a:active {
                           <thead>
                             <tr>
                                 <th width="13%">教师编号</th>
-                                <th width="13%">教师微信号</th>
+                               
                                 <th width="16%">姓名</th>
                                 <th width="19%">性别</th>
-                                <th width="29%">手机号</th>
+                                 <th width="19%">所教课程</th>
+                                <th width="23%">手机号</th>
                                 <th width="10%">详细</th>
 
                             </tr>

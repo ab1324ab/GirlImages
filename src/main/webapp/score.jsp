@@ -58,59 +58,62 @@ a:active {
     <ul>
         <li class="active"><a href="tables.jsp"><i class="icon icon-th"></i> <span>学员信息管理</span></a></li>
         <li><a href="Teachers.jsp"><i class="icon icon-th"></i> <span>教员信息管理</span></a></li>
-        <li><a href="#"><i class="icon icon-th-list"></i> <span>课程管理</span></a></li>
-        <li><a href="#"><i class="icon icon-th-list"></i> <span>分数管理</span></a></li>
+        <li><a href="course.jsp"><i class="icon icon-th-list"></i> <span>课程管理</span></a></li>
+        <li><a href="score.jsp"><i class="icon icon-th-list"></i> <span>分数管理</span></a></li>
     </ul>
 
 </div>
 <div id="content">
     <div id="content-header">
-        <h1>教师信息管理</h1>
+        <h1>分数信息管理</h1>
   </div>
     <div id="breadcrumb">
         <a href="#" title="Go to Home" class="tip-bottom"><i class="icon-home"></i>合众艾特</a>
-        <a href="#" class="current">教师信息</a>
+        <a href="#" class="current">分数信息</a>
     </div>
     <div class="container-fluid" id="zhongjian">
         <div class="row-fluid">
             <div class="span12">
-                <div class="widget-box">
-                    <div class="widget-title">
-                        <h5>教师信息列表</h5>
-                    </div>
-                    <div class="widget-content nopadding">
-                      <table class="table table-bordered data-table">
-                          <thead>
-                            <tr>
-                                <th width="13%">教师编号</th>
-                                <th width="13%">教师微信号</th>
-                                <th width="16%">姓名</th>
-                                <th width="19%">性别</th>
-                                <th width="29%">手机号</th>
-                                <th width="10%">详细</th>
-
-                            </tr>
-                        </thead>
-                            <tbody>
-<!--table开始-->
-<% ImplementationStudent student=new ImplementationStudent();
+              <div class="widget-box">
+                <div class="widget-title">
+                  <h5>分数信息列表</h5>
+                </div>
+                <div class="widget-content nopadding">
+                  <table class="table table-bordered data-table">
+                    <thead>
+                      <tr>
+                        <th width="9%">姓名</th>
+                        <th width="13%">课程名字</th>
+                        <th width="13%">课程名字</th>
+                        <th width="12%">课程名字</th>
+                        <th width="13%">课程名字</th>
+                        <th width="15%">课程名字</th>
+                        <th width="14%">课程名字</th>
+                        <th width="11%">总分</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <!--table开始-->
+                      <% ImplementationStudent student=new ImplementationStudent();
     List<Student> list=student.query();
     for (Student l:list) {
 %>
-                            <tr class="gradeU">
-                                <td><%=l.getStudentNo()%></td>
-                                <td><%=l.getLoginPwd()%></td>
-                                <td><%=l.getStudentName()%></td>
-                                <td><%=(l.getSex()==0)?'男':'女'%></td>
-                                <td><%=l.getPhone()%></td>
-                                <td><a href="www.baidu.com" target="content">详细</a></td>
-                            </tr>
- <%}%>
-  <!--table结束 -->                       
-    </tbody>
-                      </table>
-                  </div>
+                      <tr class="gradeU">
+                        <td><%=l.getStudentNo()%></td>
+                        <td><%=l.getLoginPwd()%></td>
+                        <td><%=l.getLoginPwd()%></td>
+                        <td><%=l.getLoginPwd()%></td>
+                        <td><%=l.getStudentName()%></td>
+                        <td><%=(l.getSex()==0)?'男':'女'%></td>
+                        <td><%=l.getPhone()%></td>
+                        <td><a href="www.baidu.com" target="content">详细</a></td>
+                      </tr>
+                      <%}%>
+                      <!--table结束 -->
+                    </tbody>
+                  </table>
                 </div>
+              </div>
             </div>
         </div>
     </div>
