@@ -9,6 +9,7 @@ To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=utf-8" language="java" %>
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <title>学员信息管理</title>
@@ -34,13 +35,48 @@ a:hover {
 a:active {
 	text-decoration: none;
 }
+body {
+	margin-right: 30px;
+}
+.bian{
+	visibility:hidden;
+	float: right;
+	clear: none;
+    width: 50px;
+	}
+.xian{
+	visibility:visible;
+	float: right;
+	clear: none;
+	width: 50px;
+}
 </style>
+    <Script>
+        function deletestu(StudentNo){
+             var b=window.confirm("是否确认删除?");
+            if(b==true){
+             location="Biz/shanchu.jsp?StudentNo="+StudentNo;
+            }
+        }
+		
+function bian(StudentNo){
+    document.getElementById("update").style.display="none";
+    var a=document.getElementsByTagName("input");
+	for(var i=0;i<a.length;i++){
+	      a[i].className=".xian";
+	}
+	document.getElementById("update").innerText="保存";
+    document.getElementById("update").href="Biz/update.jsp?StudentNo="+StudentNo;
+
+}
+    </Script>
 </head>
+
 <body>
 
 
 <div id="header">
-    <h1><a href="./dashboard.html"></a></h1>
+  <h1><a href="./dashboard.html"></a></h1>
 </div>
 
 
@@ -56,7 +92,7 @@ a:active {
 <div id="sidebar">
     <a href="#" class="visible-phone"><i class="icon icon-th-list"></i>考试信息管理</a>
     <ul>
-        <li class="active"><a href="xiangxi.jsp"><i class="icon icon-th"></i> <span>学员信息管理</span></a></li>
+        <li class="active"><a href="tables.jsp"><i class="icon icon-th"></i> <span>学员信息管理</span></a></li>
         <li><a href="Teachers.jsp"><i class="icon icon-th"></i> <span>教员信息管理</span></a></li>
         <li><a href="course.jsp"><i class="icon icon-th-list"></i> <span>课程管理</span></a></li>
         <li><a href="score.jsp"><i class="icon icon-th-list"></i> <span>分数管理</span></a></li>
@@ -79,52 +115,71 @@ a:active {
                         <h5>学员信息</h5>
                     </div>
                     <div class="widget-content nopadding">
-                      <table height="401" class="table table-bordered data-table">
+  <% String id=request.getParameter("id");
+        ImplementationStudent imp=new ImplementationStudent();
+        List<Student> list=imp.queryDange(id);
+        for (Student l:list) {
+
+ %>
+<form name="form1" method="post" action="Biz/update.jsp?StudentNo=<%=l.getStudentNo()%>">
+                    <table width="80%" height="401" align="center" class="table table-bordered data-table">
                           <thead>
-<% String id=request.getParameter("id");
-    ImplementationStudent imp=new ImplementationStudent();
-    List<Student> list=imp.queryDange(id);
-    for (Student l:list) {
-%>
+
 <tr>
- <th width="20%" align="center" valign="middle">编号</th>
- <td width="39%"><%=l.getStudentNo()%></td>
- <td width="41%" rowspan="6"><div id="ssss"><img src="http://img1.2345.com/duoteimg/qqTxImg/2013/04/22/13667110938.jpg" width="300" height="300"></div></td>
- </tr>
-<tr>
- <th width="20%" align="center" valign="middle">微信号</th>
- <td><%=l.getLoginPwd()%></td>
+ <th width="12%" align="left" valign="middle">编号</th>
+ <td width="31%" align="center" valign="middle"><%=l.getStudentNo()%>
+</td>
+ <td width="4%" rowspan="6" valign="top">头像</td>
+ <td width="42%" rowspan="6" align="center" valign="middle"><div id="ssss"><img src="http://img1.2345.com/duoteimg/qqTxImg/2013/04/22/13667110938.jpg" width="313" height="231"></div></td>
+   <th width="11%" rowspan="9" align="center" valign="middle">&nbsp;</th>
  </tr>
 <tr>
- <th width="20%" align="center" valign="middle">姓名</th>
- <td><%=l.getStudentName()%></td>
- </tr>
+ <th width="12%" align="left" valign="middle">微信号</th>
+ <td align="center" valign="middle"><%=l.getLoginPwd()%>
+  </td>
+   </tr>
+<tr>
+ <th width="12%" align="left" valign="middle">姓名</th>
+ <td align="center" valign="middle"><%=l.getStudentName()%>
+   <input class="bian" type="text" name="StudentName" value="<%=l.getStudentName()%>" id="a"></td>
+   </tr>
 <tr>                                
- <th width="20%" align="center" valign="middle">性别</th>
- <td><%=(l.getSex()==0)?'男':'女'%></td>
- </tr>
+ <th width="12%" align="left" valign="middle">性别</th>
+ <td align="center" valign="middle"><%=(l.getSex()==0)?'男':'女'%>
+   <input class="bian" type="text" name="Sex" value="<%=(l.getSex()==0)?'男':'女'%>"  id="a"></td>
+   </tr>
 <tr>                                
- <th width="20%" align="center" valign="middle">课程</th>
- <td><%=l.getGradeId()%></td>
- </tr>
+ <th width="12%" align="left" valign="middle">课程</th>
+ <td align="center" valign="middle"><%=l.getGradeId()%>
+   <input class="bian" type="text" name="GradeId" value="<%=l.getGradeId()%>" id="a"></td>
+   </tr>
 <tr>                                
- <th width="20%" align="center" valign="middle">手机号</th>
- <td><%=l.getPhone()%></td>
- </tr>
+ <th width="12%" align="left" valign="middle">手机号</th>
+ <td align="center" valign="middle"><%=l.getPhone()%>
+   <input class="bian" type="text" name="Phone" value="<%=l.getPhone()%>" id="a"></td>
+   </tr>
 <tr>                                
- <th width="20%" align="center" valign="middle">住址</th>
- <td colspan="3"><%=l.getAddress()%></td>
- </tr>
+ <th width="12%" align="left" valign="middle">住址</th>
+ <td colspan="3" align="center" valign="middle"><%=l.getAddress()%>
+   <input class="bian" type="text" name="Address" value="<%=l.getAddress()%>" id="b"></td>
+   </tr>
 <tr>                                
- <th width="20%" align="center" valign="middle">生日</th>
- <td colspan="3"><%=l.getBornDate()%></td>
- </tr>
+ <th align="left" valign="middle">生日</th>
+ <td colspan="3" align="center" valign="middle"><%=l.getBornDate()%>
+   <input class="bian" type="text" name="BornDate" value="<%=l.getBornDate()%>" id="b"></td>
+   </tr>
 <tr>                                
- <th width="20%" align="center" valign="middle">邮箱</th>
- <td colspan="3"><%=l.getEmall()%></td>
- </tr>
-<tr>                                
- <th colspan="4"><a href="#">退出</a></th>
+ <th width="12%" align="left" valign="middle">邮箱</th>
+ <td colspan="3" align="center" valign="middle"><%=l.getBornDate()%>
+   <input class="bian" type="text" name="Emall" value="<%=l.getBornDate()%>"  id="b">
+</td>
+   </tr>
+<tr>   
+<th  >
+<th colspan="2" align="right" valign="middle" ><a href="JavaScript:bian(<%=l.getStudentNo()%>)" class=".xian" id="update">修改</a>
+  <input  class="bian" type="submit" name="button" id="button" value="提交">
+<th width="42%"><a href="JavaScript:deletestu(<%=l.getStudentNo()%>)">删除</a></th>
+  <th width="11%" align="center" valign="middle"><a href="#">退出</a></th>
  </tr>
 <% }%>
 
@@ -136,13 +191,12 @@ a:active {
                        
     </tbody>
                       </table>
+                      </form>
                   </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
-
 </body>
 </html>

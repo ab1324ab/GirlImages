@@ -59,11 +59,11 @@ public class ImplementationStudent extends ServerConnect implements Implementati
     public Integer update(Object obj) {
         Student o=(Student)obj;
         connection=getConnection();
-        String sql="UPDATE "+biao+" SET LoginPwd=? and StudentName=? and Sex=? and " +
+        String sql="UPDATE "+biao+" SET  StudentName=? and Sex=? and " +
                                        "GradeId=? and Phone=? and Address=? and " +
                                        "BornDate=? and Emall=? and IdentityCard=? WHERE Gradeid=?";
         try {
-            int i=queryRunner.update(connection,sql,o.getLoginPwd(),o.getStudentName(),o.getSex(),
+            int i=queryRunner.update(connection,sql,o.getStudentName(),o.getSex(),
                                                     o.getGradeId(),o.getPhone(),o.getAddress(),
                                                     o.getBornDate(),o.getEmall(),o.getIdentityCard(),o.getGradeId());
             return i;
@@ -78,7 +78,7 @@ public class ImplementationStudent extends ServerConnect implements Implementati
     @Override
     public List<Student> query() {
         connection=getConnection();
-        String sql="select * from "+biao;
+        String sql="select * from "+biao+" where del=1";
         try {
         List<Student> list=queryRunner.query(connection,sql, new BeanListHandler<Student>(Student.class));
         return list;
@@ -92,7 +92,7 @@ public class ImplementationStudent extends ServerConnect implements Implementati
     @Override
     public List<Student> queryDange(String id){
         connection=getConnection();
-        String sql="select * from "+biao+" where StudentNo=?";
+        String sql="select * from "+biao+" where StudentNo=? and del=1";
         try {
             List<Student> list=queryRunner.query(connection,sql,new BeanListHandler<Student>(Student.class),id);
         return list;

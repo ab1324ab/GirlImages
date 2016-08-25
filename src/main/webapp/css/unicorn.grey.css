@@ -42,6 +42,11 @@ body {
 	background-image: -o-linear-gradient(top, #333333 0%, #3F3F3F 100%);
 	background-image: linear-gradient(top, #333333 0%, #3F3F3F 100%);
 }
+#ssss {
+	height: 200px;
+	width: 200px;
+}
+
 
 #sidebar > ul > li.open.submenu > a {
 	border-bottom: 1px solid #393939;
@@ -96,4 +101,14 @@ body {
 	#sidebar > ul ul:after {
 		border-right: 6px solid #222222;
     }
+}
+#a {
+	width: 110px;
+	float: right;
+	height: 20px;
+}
+#b{
+	width:230px;
+	float: right;
+	height: 20px;
 }

@@ -103,7 +103,7 @@ a:active {
                                 <td><%=l.getStudentName()%></td>
                                 <td><%=(l.getSex()==0)?'男':'女'%></td>
                                 <td><%=l.getPhone()%></td>
-                                <td><a href="xiangxi.jsp?id=<%=l.getStudentNo()%>"  target="_new">详细</a></td>
+                                <td><a href="xiangxi.jsp?id=<%=l.getStudentNo()%>"  target="_self">详细</a></td>
                             </tr>
  <%}%>
   <!--table结束 -->                       

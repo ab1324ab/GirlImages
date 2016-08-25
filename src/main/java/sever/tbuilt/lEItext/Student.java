@@ -8,7 +8,7 @@ public class Student {
 	/**
 	 *  学号
 	 */
-	private Integer studentNo;
+	private String studentNo;
 	/**
 	 *  密码
 	 */
@@ -20,7 +20,7 @@ public class Student {
 	/**
 	 *  性别
 	 */
-	private Byte sex;
+	private int sex;
 	/**
 	 *  所属年级
 	 */
@@ -47,9 +47,9 @@ public class Student {
 	private String identityCard;
 	/**
 	 * 学号
-	 * @param studentNo
-	 */
-	public void setStudentNo(Integer studentNo){
+     * @param studentNo
+     */
+	public void setStudentNo(String studentNo){
 		this.studentNo = studentNo;
 	}
 	
@@ -57,7 +57,7 @@ public class Student {
      * 学号
      * @return
      */	
-    public Integer getStudentNo(){
+    public String getStudentNo(){
     	return studentNo;
     }
 	/**
@@ -94,7 +94,7 @@ public class Student {
 	 * 性别
 	 * @param sex
 	 */
-	public void setSex(Byte sex){
+	public void setSex(int sex){
 		this.sex = sex;
 	}
 	
@@ -102,7 +102,7 @@ public class Student {
      * 性别
      * @return
      */	
-    public Byte getSex(){
+    public int getSex(){
     	return sex;
     }
 	/**

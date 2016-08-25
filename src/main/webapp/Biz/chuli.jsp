@@ -8,7 +8,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<% //request.setCharacterEncoding("UTF_8");
+<%  request.setCharacterEncoding("UTF-8");
     //解决中文乱码问题
     String name=request.getParameter("username");//拿到数字框的值
     String pwd=request.getParameter("password");
