@@ -87,40 +87,40 @@ a:active {
     for (Student l:list) {
 %>
 <tr>
- <th width="20%">编号</th>
- <td><%=l.getStudentNo()%></td>
- <td width="11%" rowspan="6"><div id="ssss"><img src="http://img1.2345.com/duoteimg/qqTxImg/2013/04/22/13667110938.jpg" width="300" height="300"></div></td>
+ <th width="20%" align="center" valign="middle">编号</th>
+ <td width="39%"><%=l.getStudentNo()%></td>
+ <td width="41%" rowspan="6"><div id="ssss"><img src="http://img1.2345.com/duoteimg/qqTxImg/2013/04/22/13667110938.jpg" width="300" height="300"></div></td>
  </tr>
 <tr>
- <th width="20%">微信号</th>
+ <th width="20%" align="center" valign="middle">微信号</th>
  <td><%=l.getLoginPwd()%></td>
  </tr>
 <tr>
- <th width="20%">姓名</th>
+ <th width="20%" align="center" valign="middle">姓名</th>
  <td><%=l.getStudentName()%></td>
  </tr>
 <tr>                                
- <th width="20%">性别</th>
+ <th width="20%" align="center" valign="middle">性别</th>
  <td><%=(l.getSex()==0)?'男':'女'%></td>
  </tr>
 <tr>                                
- <th width="20%">课程</th>
+ <th width="20%" align="center" valign="middle">课程</th>
  <td><%=l.getGradeId()%></td>
  </tr>
 <tr>                                
- <th width="20%">手机号</th>
+ <th width="20%" align="center" valign="middle">手机号</th>
  <td><%=l.getPhone()%></td>
  </tr>
 <tr>                                
- <th width="20%">住址</th>
+ <th width="20%" align="center" valign="middle">住址</th>
  <td colspan="3"><%=l.getAddress()%></td>
  </tr>
 <tr>                                
- <th width="20%">生日</th>
+ <th width="20%" align="center" valign="middle">生日</th>
  <td colspan="3"><%=l.getBornDate()%></td>
  </tr>
 <tr>                                
- <th width="20%">邮箱</th>
+ <th width="20%" align="center" valign="middle">邮箱</th>
  <td colspan="3"><%=l.getEmall()%></td>
  </tr>
 <tr>                                
