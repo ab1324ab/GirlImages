@@ -77,4 +77,12 @@ public class Implementation extends ServerConnect implements ImplementationBti {
             close(connection,null,null);
         }
     }
+    @Override
+    public List<Object> queryDange(String id){
+        connection=getConnection();
+        String sql="select * from "+biao+" where ";
+
+
+        return null;
+    }
 }

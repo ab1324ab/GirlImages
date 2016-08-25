@@ -1,9 +1,11 @@
 package sever.tbuilt.entity;
 
+
 import org.apache.commons.dbutils.handlers.BeanListHandler;
 import sever.publics.ServerConnect;
-import sever.tbuilt.lEItext.Grade;
 import sever.tbuilt.impl.ImplementationBti;
+import sever.tbuilt.lEItext.Teacher;
+
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.List;
@@ -11,17 +13,16 @@ import java.util.List;
 /**
  * Created by Administrator on 2016/8/23.
  */
-public class ImplementationGrade extends ServerConnect implements ImplementationBti {
-    String biao="Grade";
+public class ImplementationTeacher extends ServerConnect implements ImplementationBti {
+    String biao="Teachers";
     private Statement statement;
     @Override
-    public Integer increase(Object obj)  {
-        Grade o=(Grade) obj;
+    public Integer increase(Object o)  {
         String sql="insert into "+biao+" (gradename)  value (?)";
         connection=getConnection();
         int i= 0;
         try {
-            i = queryRunner.update(connection,sql,o.getGradeName());
+            i = queryRunner.update(connection,sql);
             return i;
         } catch (SQLException e) {
             e.printStackTrace();
@@ -49,12 +50,11 @@ public class ImplementationGrade extends ServerConnect implements Implementation
     }
 
     @Override
-    public Integer update(Object obj) {
-        Grade o=(Grade) obj;
+    public Integer update(Object o) {
         connection=getConnection();
         String sql="UPDATE "+biao+" SET GradeName=? WHERE Gradeid=?";
         try {
-            int i=queryRunner.update(connection,sql,o.getGradeName(),o.getGradeId());
+            int i=queryRunner.update(connection,sql);
             return i;
         } catch (SQLException e) {
             e.printStackTrace();
@@ -65,11 +65,11 @@ public class ImplementationGrade extends ServerConnect implements Implementation
     }
 
     @Override
-    public List<Grade> query() {
+    public List<Teacher> query() {
         connection=getConnection();
         String sql="select * from "+biao;
         try {
-        List<Grade> list=queryRunner.query(connection,sql, new BeanListHandler<Grade>(Grade.class));
+        List<Teacher> list=queryRunner.query(connection,sql, new BeanListHandler<Teacher>(Teacher.class));
         return list;
         } catch (SQLException e) {
             e.printStackTrace();
@@ -78,12 +78,9 @@ public class ImplementationGrade extends ServerConnect implements Implementation
             close(connection,null,null);
         }
     }
+
     @Override
-    public List<Object> queryDange(String id){
-        connection=getConnection();
-        String sql="select * from "+biao+" where ";
-
-
+    public List queryDange(String id) {
         return null;
     }
 }

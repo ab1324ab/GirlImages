@@ -4,13 +4,24 @@ package sever.tbuilt.lEItext;
  * 
  * @author houwen
  */
-public class User_Info {
+public class UserInfo {
 	/**
 	 *  
 	 */
 	private Integer id;
+
+	public UserInfo(String username, String password) {
+		this.username = username;
+		this.password = password;
+	}
+
+	public UserInfo() {
+	}
+
 	/**
-	 *  
+	 *
+
+
 	 */
 	private String username;
 	/**

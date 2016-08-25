@@ -1,6 +1,6 @@
 package sever.publics;
 
-import com.alibaba.druid.pool.DruidDataSourceFactory;
+//import com.alibaba.druid.pool.DruidDataSourceFactory;
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 import org.apache.commons.dbutils.QueryRunner;
 
@@ -78,7 +78,7 @@ public class ServerConnect {
             e.printStackTrace();
         }
         try {
-            connection=DruidDataSourceFactory.createDataSource(properties).getConnection();
+            //connection=DruidDataSourceFactory.createDataSource(properties).getConnection();
         } catch (Exception e) {
             e.printStackTrace();
         }

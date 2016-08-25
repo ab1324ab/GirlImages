@@ -89,4 +89,16 @@ public class ImplementationStudent extends ServerConnect implements Implementati
             close(connection,null,null);
         }
     }
+    @Override
+    public List<Student> queryDange(String id){
+        connection=getConnection();
+        String sql="select * from "+biao+" where StudentNo=?";
+        try {
+            List<Student> list=queryRunner.query(connection,sql,new BeanListHandler<Student>(Student.class),id);
+        return list;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
 }

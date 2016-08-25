@@ -1,6 +1,8 @@
-<%@ page import="sever.tbuilt.entity.ImplementationStudent" %>
-<%@ page import="sever.tbuilt.lEItext.Student" %>
-<%@ page import="java.util.List" %><%--
+<%@ page import="java.util.List" %>
+<%@ page import="sever.tbuilt.entity.ImplementationGrade" %>
+<%@ page import="sever.tbuilt.lEItext.Grade" %>
+<%@ page import="sever.tbuilt.entity.ImplementationTeacher" %>
+<%@ page import="sever.tbuilt.lEItext.Teacher" %><%--
 Created by IntelliJ IDEA.
 User: Administrator
 Date: 2016/8/24
@@ -48,7 +50,7 @@ a:active {
     <ul class="nav btn-group">
         <li class="btn btn-inverse"><a title="" href="#"><i class="icon icon-user"></i> <span
                 class="text">Profile</span></a></li>
-        <li class="btn btn-inverse"><a title="" href="login.html"><i class="icon icon-share-alt"></i> <span
+        <li class="btn btn-inverse"><a title="" href="inde.html"><i class="icon icon-share-alt"></i> <span
                 class="text">Logout</span></a></li>
     </ul>
 </div>
@@ -85,26 +87,27 @@ a:active {
                                 <th width="11%">课程编号</th>
                                 <th width="27%">课程名</th>
                                 <th width="16%">任课教师</th>
-                                <th width="33%">手机号</th>
                                 <th width="13%">详细</th>
 
                             </tr>
                         </thead>
                             <tbody>
 <!--table开始-->
-<% ImplementationStudent student=new ImplementationStudent();
-    List<Student> list=student.query();
-    for (Student l:list) {
+<% ImplementationGrade student=new ImplementationGrade();
+    ImplementationTeacher Teacher=new ImplementationTeacher();
+    List<Teacher> list1=Teacher.query();
+    List<Grade> list=student.query();
+    for (int i = 0; i <list.size()|i<list1.size() ; i++) {
+        Grade  g =list.get(i);
+        Teacher l=list1.get(i);
 %>
                             <tr class="gradeU">
-                                
-                                <td><%=l.getLoginPwd()%></td>
-                                <td><%=l.getStudentName()%></td>
-                                <td><%=(l.getSex()==0)?'男':'女'%></td>
-                                <td><%=l.getPhone()%></td>
-                                <td><a href="www.baidu.com" target="content">详细</a></td>
+                                <td><%=g.getGradeId()%></td>
+                                <td><%=g.getGradeName()%></td>
+                                <td><%=l.getTeachersName()%></td>
+                                <td><a href="#" target="content">详细</a></td>
                             </tr>
- <%}%>
+<%}%>
   <!--table结束 -->                       
     </tbody>
                       </table>

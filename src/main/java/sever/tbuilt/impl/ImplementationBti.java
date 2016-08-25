@@ -36,4 +36,10 @@ public interface ImplementationBti {
      */
     List  query();
 
+    /**
+     * 单个查询
+     * @return
+     */
+    List  queryDange(String id);
+
 }

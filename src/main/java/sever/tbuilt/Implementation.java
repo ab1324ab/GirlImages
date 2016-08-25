@@ -78,4 +78,9 @@ public class Implementation extends ServerConnect implements ImplementationBti {
             close(connection,null,null);
         }
     }
+
+    @Override
+    public List queryDange(String id) {
+        return null;
+    }
 }

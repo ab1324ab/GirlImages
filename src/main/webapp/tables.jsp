@@ -48,7 +48,7 @@ a:active {
     <ul class="nav btn-group">
         <li class="btn btn-inverse"><a title="" href="#"><i class="icon icon-user"></i> <span
                 class="text">Profile</span></a></li>
-        <li class="btn btn-inverse"><a title="" href="login.html"><i class="icon icon-share-alt"></i> <span
+        <li class="btn btn-inverse"><a title="" href="inde.html"><i class="icon icon-share-alt"></i> <span
                 class="text">Logout</span></a></li>
     </ul>
 </div>
@@ -103,7 +103,7 @@ a:active {
                                 <td><%=l.getStudentName()%></td>
                                 <td><%=(l.getSex()==0)?'男':'女'%></td>
                                 <td><%=l.getPhone()%></td>
-                                <td><a href="www.baidu.com" target="content">详细</a></td>
+                                <td><a href="xiangxi.jsp?id=<%=l.getStudentNo()%>"  target="content">详细</a></td>
                             </tr>
  <%}%>
   <!--table结束 -->                       
