@@ -1,7 +1,8 @@
 <%@ page import="sever.tbuilt.lEItext.Student" %>
 <%@ page import="java.util.Date" %>
 <%@ page import="java.text.SimpleDateFormat" %>
-<%@ page import="java.text.ParseException" %><%--
+<%@ page import="java.text.ParseException" %>
+<%@ page import="sever.tbuilt.entity.ImplementationStudent" %><%--
   Created by IntelliJ IDEA.
   User: Administrator
   Date: 2016/8/25
@@ -23,11 +24,12 @@
     String  Emall=request.getParameter("Emall");
     //赋值
     student.setStudentNo(StudentNo);
-    student.setStudentName(StudentName);
+    student.setStudentName(StudentName);//名字
     student.setSex(Integer.parseInt(Sex));//字符转int
-    student.setGradeId(Integer.parseInt(GradeId));
+    student.setGradeId(Integer.parseInt(GradeId));//字符转int
     student.setPhone(Phone);
     student.setAddress(Address);
+    student.setEmall(Emall);
     //字符串转日期
     SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
     Date date = null;
@@ -38,7 +40,9 @@
         e.printStackTrace();
         System.out.println("日期错误");
     }
-
+    ImplementationStudent imp=new ImplementationStudent();
+    imp.update(student);
+    response.sendRedirect("xiangxi.jsp");
 %>
 <html>
 <head>
