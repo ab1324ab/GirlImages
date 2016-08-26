@@ -7,9 +7,14 @@ Date: 2016/8/24
 Time: 16:23
 To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=utf-8" language="java" %>
-<!DOCTYPE html>
 
+<%@ page contentType="text/html;charset=utf-8" language="java" %>
+<%@include file="Biz/Sessionyanzheng.jsp" %>
+<%
+    Object name=session.getAttribute("name");
+%>
+<!DOCTYPE html>
+<link rel="SHORTCUT ICON" href="img/23.png"/>
 <html lang="en">
 <head>
     <title>学员信息管理</title>
@@ -83,19 +88,53 @@ function bian(StudentNo){
 <div id="user-nav" class="navbar navbar-inverse">
     <ul class="nav btn-group">
         <li class="btn btn-inverse"><a title="" href="#"><i class="icon icon-user"></i> <span
-                class="text">Profile</span></a></li>
-        <li class="btn btn-inverse"><a title="" href="inde.html"><i class="icon icon-share-alt"></i> <span
-                class="text">Logout</span></a></li>
+                class="text"><%=name%></span></a></li>
+        <li class="btn btn-inverse"><a title="" href="index.jsp"><i class="icon icon-share-alt"></i> <span
+                class="text">退出</span></a></li>
     </ul>
 </div>
 
 <div id="sidebar">
     <a href="#" class="visible-phone"><i class="icon icon-th-list"></i>考试信息管理</a>
     <ul>
-        <li class="active"><a href="tables.jsp"><i class="icon icon-th"></i> <span>学员信息管理</span></a></li>
-        <li><a href="Teachers.jsp"><i class="icon icon-th"></i> <span>教员信息管理</span></a></li>
-        <li><a href="course.jsp"><i class="icon icon-th-list"></i> <span>课程管理</span></a></li>
-        <li><a href="score.jsp"><i class="icon icon-th-list"></i> <span>分数管理</span></a></li>
+        <li class="submenu active"><a href="#"><i class="icon icon-th-list"></i> <span>学员列表</span> <span class="label">3</span></a>
+            <ul>
+                <li class="active"><a href="tables.jsp">学员信息</a></li>
+            </ul>
+            <ul>
+                <li class="active"><a href="xinzen.jsp">新增学员</a></li>
+            </ul>
+        </li>
+
+        <li class="submenu active">
+            <a href="#"><i class="icon icon-th-list"></i> <span>教员列表</span> <span class="label">3</span></a>
+            <ul>
+                <li class="active"><a href="Teachers.jsp">教员信息</a></li>
+            </ul>
+            <ul>
+                <li class="active"><a href="#">新增教员</a></li>
+            </ul>
+        </li>
+
+        <li class="submenu active">
+            <a href="course.jsp"><i class="icon icon-th-list"></i> <span>课程列表</span> <span class="label">3</span></a>
+            <ul>
+                <li class="active"><a href="course.jsp">课程信息</a></li>
+            </ul>
+            <ul>
+                <li class="active"><a href="#">新增课程</a></li>
+            </ul>
+        </li>
+
+        <li class="submenu active">
+            <a href="#"><i class="icon icon-th-list"></i> <span>分数列表</span> <span class="label">3</span></a>
+            <ul>
+                <li class="active"><a href="score.jsp">学生分数</a></li>
+            </ul>
+            <ul>
+                <li class="active"><a href="#">新增分数</a></li>
+            </ul>
+        </li>
     </ul>
 
 </div>
@@ -158,6 +197,11 @@ function bian(StudentNo){
  <td align="center" valign="middle"><%=l.getPhone()%>
    <input class="bian" type="text" name="Phone" value="<%=l.getPhone()%>" id="a"></td>
    </tr>
+<tr>
+    <th width="12%" align="left" valign="middle">身份证号</th>
+    <td colspan="3" align="center" valign="middle"><%=l.getIdentityCard()%>
+        <input class="bian" type="text" name="IdentityCard" value="<%=l.getIdentityCard()%>" id="b"></td>
+</tr>
 <tr>                                
  <th width="12%" align="left" valign="middle">住址</th>
  <td colspan="3" align="center" valign="middle"><%=l.getAddress()%>
@@ -170,8 +214,8 @@ function bian(StudentNo){
    </tr>
 <tr>                                
  <th width="12%" align="left" valign="middle">邮箱</th>
- <td colspan="3" align="center" valign="middle"><%=l.getBornDate()%>
-   <input class="bian" type="text" name="Emall" value="<%=l.getBornDate()%>"  id="b">
+ <td colspan="3" align="center" valign="middle"><%=l.getEmall()%>
+   <input class="bian" type="text" name="Emall" value="<%=l.getEmall()%>"  id="b">
 </td>
    </tr>
 <tr>   
@@ -179,7 +223,7 @@ function bian(StudentNo){
 <th colspan="2" align="right" valign="middle" ><a href="JavaScript:bian(<%=l.getStudentNo()%>)" class=".xian" id="update">修改</a>
   <input  class="bian" type="submit" name="button" id="button" value="提交">
 <th width="42%"><a href="JavaScript:deletestu(<%=l.getStudentNo()%>)">删除</a></th>
-  <th width="11%" align="center" valign="middle"><a href="#">退出</a></th>
+  <th width="11%" align="center" valign="middle"><a href="tables.jsp">退出</a></th>
  </tr>
 <% }%>
 
@@ -198,5 +242,14 @@ function bian(StudentNo){
         </div>
     </div>
 </div>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.ui.custom.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/bootstrap-colorpicker.js"></script>
+<script src="js/bootstrap-datepicker.js"></script>
+<script src="js/jquery.uniform.js"></script>
+<script src="js/select2.min.js"></script>
+<script src="js/unicorn.js"></script>
+<script src="js/unicorn.form_common.js"></script>
 </body>
 </html>

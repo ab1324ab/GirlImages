@@ -59,13 +59,13 @@ public class ImplementationStudent extends ServerConnect implements Implementati
     public Integer update(Object obj) {
         Student o=(Student)obj;
         connection=getConnection();
-        String sql="UPDATE "+biao+" SET  StudentName=? and Sex=? and " +
-                                       "GradeId=? and Phone=? and Address=? and " +
-                                       "BornDate=? and Emall=? and IdentityCard=? WHERE Gradeid=?";
+        String sql="UPDATE "+biao+" SET StudentName=?,Sex=?," +
+                                       "GradeId=?,Phone=?,Address=?," +
+                                       "BornDate=?,Emall=?,IdentityCard=? WHERE StudentNo=?";
         try {
             int i=queryRunner.update(connection,sql,o.getStudentName(),o.getSex(),
                                                     o.getGradeId(),o.getPhone(),o.getAddress(),
-                                                    o.getBornDate(),o.getEmall(),o.getIdentityCard(),o.getGradeId());
+                                                    o.getBornDate(),o.getEmall(),o.getIdentityCard(),o.getStudentNo());
             return i;
         } catch (SQLException e) {
             e.printStackTrace();

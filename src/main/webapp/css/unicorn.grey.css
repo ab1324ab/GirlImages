@@ -103,12 +103,12 @@ body {
     }
 }
 #a {
-	width: 110px;
-	float: right;
+	width: 100px;
+	float:right;
 	height: 20px;
 }
 #b{
-	width:230px;
-	float: right;
+	width:250px;
+	float:right;
 	height: 20px;
 }

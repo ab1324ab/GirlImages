@@ -16,8 +16,9 @@
     TheLogin t=new TheLogin();
     List<UserInfo> list=t.query(u);
     if (list.size()!=0){
+        session.setAttribute("name",name);
         response.sendRedirect("../tables.jsp");
     }else{
-        response.sendRedirect("../inde.html");
+        response.sendRedirect("../index.jsp");
     }
 %>
